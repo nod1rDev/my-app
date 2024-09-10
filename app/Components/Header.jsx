@@ -116,7 +116,7 @@ function Header() {
           alt="Cart"
         />
 
-        <div className="flex justify-end items-center lg:hidden w-[100%] mt-[15px] pt-[15px] border-t-[1px] border-t-[#e6e6e6]">
+        <div className="flex justify-end items-center lg:hidden w-[100%] mt-[15px] pt-[15px] ">
           <img
             className="w-4 h-4   lg:w-[16px] lg:h-[16px]"
             src="https://krasnoyarsk.sibirkoleso.ru/local/templates/sk/dist/images/header-cart-empty.svg"
