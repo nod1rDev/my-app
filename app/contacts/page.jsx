@@ -32,10 +32,14 @@ function page() {
           info@sibirkoleso.ru
         </a>
 
-        <div className="text-[13px] text-[#404040]">
+        <div className="text-[13px] mb-[24px] text-[#404040]">
           Сибирь-Колесо, головной офис
           <br />
           630088, Россия, г. Новосибирск, ул. Петухова, 35, корпус 8
+        </div>
+
+        <div className="flex flex-col ">
+            <span className="text-[#808080]"></span>
         </div>
       </div>
     </div>
