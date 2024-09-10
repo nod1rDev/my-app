@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         style={{ fontFamily: "Roboto, sans-serif" }}
       >
         <Header />
-        {children}
+        <div className="flex-1">{children}</div>
         <Footer />
       </body>
     </html>
