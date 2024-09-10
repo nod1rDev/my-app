@@ -131,7 +131,7 @@ function Header() {
           <div className="w-full lg:w-[75%] mx-auto py-5 lg:py-[20px] flex flex-col lg:flex-row  md:items-center justify-between">
             <div className="flex pl-6 md:pl-0 gap-10 lg:gap-[70px]">
               <Link href={"/wheels"}>
-                <div className=" lg:text-left cursor-pointer">
+                <div onClick={toggleMenu} className=" lg:text-left cursor-pointer">
                   <img className=" lg:mx-0" src="/shina.png" alt="Icon" />
                   <div className="mt-2 lg:mt-[10px] transition-all font-bold duration-400 hover:text-[#ff5200]">
                     Шины
@@ -139,7 +139,7 @@ function Header() {
                   <div className="text-sm text-gray-500">36 792 модели</div>
                 </div>
               </Link>
-              <Link href={"/Disks"}>
+              <Link onClick={toggleMenu} href={"/Disks"}>
                 <div className=" lg:text-left cursor-pointer">
                   <img className=" lg:mx-0" src="/disk.png" alt="Icon" />
                   <div className="mt-2 lg:mt-[10px] transition-all font-bold duration-400 hover:text-[#ff5200]">
@@ -155,11 +155,11 @@ function Header() {
             <div className="flex flex-row gap-5 lg:gap-[47px]">
               <div className="w-full lg:w-[190px] text-center lg:text-left">
                 <ul className="space-y-2 lg:space-y-[10px]">
-                  <li className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
+                  <li onClick={toggleMenu} className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
                     <Link href={"/about"}>О компании</Link>
                   </li>
 
-                  <li className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
+                  <li onClick={toggleMenu} className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
                     <Link href={"/contacts"}>Контакты</Link>
                   </li>
                 </ul>
@@ -167,10 +167,10 @@ function Header() {
 
               <div className="w-full lg:w-[190px] text-center lg:text-left">
                 <ul className="space-y-2 lg:space-y-[10px]">
-                  <li className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
+                  <li onClick={toggleMenu} className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
                     <Link href={"/payment"}>Оплата</Link>
                   </li>
-                  <li className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
+                  <li onClick={toggleMenu} className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
                     <Link href={"/delevry"}>Доставка</Link>
                   </li>
                 </ul>
