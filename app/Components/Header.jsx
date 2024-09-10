@@ -10,7 +10,7 @@ function Header() {
   };
 
   return (
-    <div className="w-full py-4 lg:py-[30px] flex justify-center text-[#1a1a1a] items-center bg-white relative">
+    <div className="w-full py-4 lg:py-[30px] border-b border-b-gray-200 flex justify-center text-[#1a1a1a] items-center bg-white relative">
       <div className="px-4 lg:px-[15px] flex flex-col md:flex-row justify-between items-center w-full lg:w-[75%]">
         <div className="flex items-center   justify-between w-[100%] lg:hidden ">
           <Link href={"/"}>
@@ -130,20 +130,24 @@ function Header() {
         <div className="absolute top-[60px] border-t border-t-gray-200 lg:top-[80px] left-0 w-full bg-white shadow-lg z-10">
           <div className="w-full lg:w-[75%] mx-auto py-5 lg:py-[20px] flex flex-col lg:flex-row  md:items-center justify-between">
             <div className="flex pl-6 md:pl-0 gap-10 lg:gap-[70px]">
-              <div className=" lg:text-left cursor-pointer">
-                <img className=" lg:mx-0" src="/shina.png" alt="Icon" />
-                <div className="mt-2 lg:mt-[10px] transition-all font-bold duration-400 hover:text-[#ff5200]">
-                  Шины
+              <Link href={"/wheels"}>
+                <div className=" lg:text-left cursor-pointer">
+                  <img className=" lg:mx-0" src="/shina.png" alt="Icon" />
+                  <div className="mt-2 lg:mt-[10px] transition-all font-bold duration-400 hover:text-[#ff5200]">
+                    Шины
+                  </div>
+                  <div className="text-sm text-gray-500">36 792 модели</div>
                 </div>
-                <div className="text-sm text-gray-500">36 792 модели</div>
-              </div>
-              <div className=" lg:text-left cursor-pointer">
-                <img className=" lg:mx-0" src="/disk.png" alt="Icon" />
-                <div className="mt-2 lg:mt-[10px] transition-all font-bold duration-400 hover:text-[#ff5200]">
-                  Диски
+              </Link>
+              <Link href={"/Disks"}>
+                <div className=" lg:text-left cursor-pointer">
+                  <img className=" lg:mx-0" src="/disk.png" alt="Icon" />
+                  <div className="mt-2 lg:mt-[10px] transition-all font-bold duration-400 hover:text-[#ff5200]">
+                    Диски
+                  </div>
+                  <div className="text-sm text-gray-500">16 195 моделей</div>
                 </div>
-                <div className="text-sm text-gray-500">16 195 моделей</div>
-              </div>
+              </Link>
             </div>
 
             <div className="bg-[#e6e6e6] h-[1px] lg:h-[145px] w-full lg:w-[1px] my-5 lg:my-0"></div>
@@ -152,10 +156,11 @@ function Header() {
               <div className="w-full lg:w-[190px] text-center lg:text-left">
                 <ul className="space-y-2 lg:space-y-[10px]">
                   <li className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
-                    О компании
+                    <Link href={"/about"}>О компании</Link>
                   </li>
+
                   <li className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
-                    Контакты
+                    <Link href={"/contacts"}>Контакты</Link>
                   </li>
                 </ul>
               </div>
@@ -163,10 +168,10 @@ function Header() {
               <div className="w-full lg:w-[190px] text-center lg:text-left">
                 <ul className="space-y-2 lg:space-y-[10px]">
                   <li className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
-                    Оплата
+                    <Link href={"/payment"}>Оплата</Link>
                   </li>
                   <li className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
-                    Доставка
+                    <Link href={"/delevry"}>Доставка</Link>
                   </li>
                 </ul>
               </div>

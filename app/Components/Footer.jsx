@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Footer() {
@@ -7,28 +8,28 @@ function Footer() {
         <div className="flex flex-col md:flex-row  items-center ">
           <div className="flex flex-col  ">
             <span className="font-bold text-[20px] inline duration-400 hover:text-[#ff5200] cursor-pointer">
-              Шины
+              <Link href={"/wheels"}>Шины</Link>
             </span>
             <span className="font-bold text-[20px] inline duration-400 hover:text-[#ff5200] cursor-pointer">
-              Диски
+              <Link href={"/Disks"}>Диски</Link>
             </span>
           </div>
           <div className="flex flex-col mt-[100px] md:mt-[0px] md:ml-[200px] md:flex-row gap-[100px]">
             <div className="flex flex-col ">
               <span className="  inline duration-400 hover:text-[#ff5200] cursor-pointer">
-                О компании
+                <Link href={"/about"}>О компании</Link>
               </span>
               <span className="  inline duration-400 hover:text-[#ff5200] cursor-pointer">
-                Контакты
+                <Link href={"/contacts"}>Контакты</Link>
               </span>
             </div>
 
             <div className="flex flex-col ">
               <span className="  inline duration-400 hover:text-[#ff5200] cursor-pointer">
-                Оплата
+                <Link href={"/payment"}>Оплата</Link>
               </span>
               <span className="  inline duration-400 hover:text-[#ff5200] cursor-pointer">
-                Доставка
+                <Link href={"/delevry"}>Доставка</Link>
               </span>
             </div>
           </div>
