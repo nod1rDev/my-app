@@ -24,7 +24,7 @@ const page = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-[75%] mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">О компании</h1>
 
       <p className="mb-8">

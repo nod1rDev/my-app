@@ -131,7 +131,10 @@ function Header() {
           <div className="w-full lg:w-[75%] mx-auto py-5 lg:py-[20px] flex flex-col lg:flex-row  md:items-center justify-between">
             <div className="flex pl-6 md:pl-0 gap-10 lg:gap-[70px]">
               <Link href={"/wheels"}>
-                <div onClick={toggleMenu} className=" lg:text-left cursor-pointer">
+                <div
+                  onClick={toggleMenu}
+                  className=" lg:text-left cursor-pointer"
+                >
                   <img className=" lg:mx-0" src="/shina.png" alt="Icon" />
                   <div className="mt-2 lg:mt-[10px] transition-all font-bold duration-400 hover:text-[#ff5200]">
                     Шины
@@ -155,11 +158,17 @@ function Header() {
             <div className="flex flex-row gap-5 lg:gap-[47px]">
               <div className="w-full lg:w-[190px] text-center lg:text-left">
                 <ul className="space-y-2 lg:space-y-[10px]">
-                  <li onClick={toggleMenu} className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
+                  <li
+                    onClick={toggleMenu}
+                    className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer"
+                  >
                     <Link href={"/about"}>О компании</Link>
                   </li>
 
-                  <li onClick={toggleMenu} className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
+                  <li
+                    onClick={toggleMenu}
+                    className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer"
+                  >
                     <Link href={"/contacts"}>Контакты</Link>
                   </li>
                 </ul>
@@ -167,10 +176,16 @@ function Header() {
 
               <div className="w-full lg:w-[190px] text-center lg:text-left">
                 <ul className="space-y-2 lg:space-y-[10px]">
-                  <li onClick={toggleMenu} className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
+                  <li
+                    onClick={toggleMenu}
+                    className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer"
+                  >
                     <Link href={"/payment"}>Оплата</Link>
                   </li>
-                  <li onClick={toggleMenu} className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer">
+                  <li
+                    onClick={toggleMenu}
+                    className="transition-all duration-400 hover:text-[#ff5200] cursor-pointer"
+                  >
                     <Link href={"/delevry"}>Доставка</Link>
                   </li>
                 </ul>
@@ -181,7 +196,14 @@ function Header() {
               <span className=" text-gray-600 text-[13px]">
                 Единая справочная
               </span>
-              <div className=" text-lg font-bold">8 800 775-10-50</div>
+              <a
+                href="tel:88007751050"
+                className=" text-lg   font-bold"
+              >
+                8 800 775-10-50
+              </a>
+
+               
             </div>
           </div>
         </div>
