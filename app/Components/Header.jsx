@@ -6,7 +6,7 @@ import { changeModal } from "../Redux/CartSlice";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const count = useSelector((s) => s.cart.slected);
+  const count = useSelector((s) => s.cart.selected);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };

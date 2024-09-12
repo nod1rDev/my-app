@@ -1,4 +1,3 @@
-
 import { createSlice } from "@reduxjs/toolkit";
 
 // Define the initial items array directly here
@@ -56,7 +55,7 @@ export const CartSlice = createSlice({
   initialState: {
     modal: false,
     items: initialItems, // Reference the initial items directly
-    selected: initialItems.filter((e) => e.inCart).length, // Fix typo and calculate selected items
+    selected: 0, // Fix typo and calculate selected items
   },
   reducers: {
     changeModal: (state, { payload }) => {
@@ -67,7 +66,7 @@ export const CartSlice = createSlice({
       const updatedItems = state.items.map((e) =>
         e.id === payload ? { ...e, inCart: true } : e
       );
-      state.selected += 1;
+      state.selected = state.selected + 1;
       state.items = updatedItems;
     },
 
@@ -75,7 +74,7 @@ export const CartSlice = createSlice({
       const updatedItems = state.items.map((e) =>
         e.id === payload ? { ...e, inCart: false } : e
       );
-      state.selected -= 1;
+      state.selected = state.selected - 1;
       state.items = updatedItems;
     },
   },

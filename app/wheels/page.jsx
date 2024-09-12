@@ -8,7 +8,7 @@ import { changeModal } from "../Redux/CartSlice";
 
 function page() {
   const [active, setActive] = useState(true);
-  const count = useSelector((s) => s.cart.slected);
+  const count = useSelector((s) => s.cart.selected);
   const items = useSelector((s) => s.cart.items);
   const handleActive = () => {
     setActive(!active);
