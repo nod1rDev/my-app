@@ -1,14 +1,18 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { changeModal } from "../Redux/CartSlice";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const count = useSelector((s) => s.cart.slected);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  
+  const dispatch = useDispatch();
   return (
     <div className="w-full py-4 lg:py-[30px] border-b border-b-gray-200 flex justify-center text-[#1a1a1a] items-center bg-white relative">
       <div className="px-4 lg:px-[15px] flex flex-col md:flex-row justify-between items-center w-full lg:w-[75%]">
@@ -110,19 +114,41 @@ function Header() {
           </button>
         </div>
 
-        <img
-          className="w-4 h-4 hidden lg:block lg:w-[16px] lg:h-[16px]"
-          src="https://krasnoyarsk.sibirkoleso.ru/local/templates/sk/dist/images/header-cart-empty.svg"
-          alt="Cart"
-        />
+        <button
+          className="relative"
+          onClick={() => dispatch(changeModal(true))}
+        >
+          <img
+            className="w-4 h-4 hidden lg:block lg:w-[16px] lg:h-[16px]"
+            src="https://krasnoyarsk.sibirkoleso.ru/local/templates/sk/dist/images/header-cart-empty.svg"
+            alt="Cart"
+          />
+          {count ? (
+            <span className="absolute hidden lg:flex bottom-[-10px] right-[-10px] bg-orange-500 text-white text-xs rounded-full w-4 h-4  items-center justify-center">
+              {count && count}
+            </span>
+          ) : (
+            ""
+          )}
+        </button>
 
-        <div className="flex justify-end items-center lg:hidden w-[100%] mt-[15px] pt-[15px] ">
+        <button
+          onClick={() => dispatch(changeModal(true))}
+          className="flex relative justify-end items-center lg:hidden w-[100%] mt-[15px] pt-[15px] "
+        >
           <img
             className="w-4 h-4   lg:w-[16px] lg:h-[16px]"
             src="https://krasnoyarsk.sibirkoleso.ru/local/templates/sk/dist/images/header-cart-empty.svg"
             alt="Cart"
           />
-        </div>
+          {count ? (
+            <span className="absolute bottom-[-10px] right-[-10px] bg-orange-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+              {count && count}
+            </span>
+          ) : (
+            ""
+          )}
+        </button>
       </div>
 
       {/* Menyu ochiq bo'lsa ko'rinadi */}
@@ -142,7 +168,7 @@ function Header() {
                   <div className="text-sm text-gray-500">36 792 модели</div>
                 </div>
               </Link>
-              <Link onClick={toggleMenu} href={"/Disks"}>
+              <Link onClick={toggleMenu} href={"/wheels"}>
                 <div className=" lg:text-left cursor-pointer">
                   <img className=" lg:mx-0" src="/disk.png" alt="Icon" />
                   <div className="mt-2 lg:mt-[10px] transition-all font-bold duration-400 hover:text-[#ff5200]">
@@ -196,14 +222,9 @@ function Header() {
               <span className=" text-gray-600 text-[13px]">
                 Единая справочная
               </span>
-              <a
-                href="tel:88007751050"
-                className=" text-lg   font-bold"
-              >
+              <a href="tel:88007751050" className=" text-lg   font-bold">
                 8 800 775-10-50
               </a>
-
-               
             </div>
           </div>
         </div>

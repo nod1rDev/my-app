@@ -12,7 +12,7 @@ function Footer() {
               <Link href="/wheels">Шины</Link>
             </span>
             <span className="font-bold text-[20px] hover:text-[#ff5200] duration-300">
-              <Link href="/disks">Диски</Link>
+              <Link href="/wheels">Диски</Link>
             </span>
           </div>
           {/* Second column: Links */}

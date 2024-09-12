@@ -1,6 +1,12 @@
+// This tells Next.js to treat this file as a client component
+
 import "./globals.css";
+
+
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import DrawerComponent from "./Components/Drawer";
+import StoreProvider from "./Components/Provider";
 
 export const metadata = {
   title: "Sibirkoleso",
@@ -9,21 +15,24 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="h-full">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body
-        className={`h-full antialiased`}
-        style={{ fontFamily: "Roboto, sans-serif" }}
-      >
-        <Header />
-        <div className="flex-1">{children}</div>
-        <Footer />
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="en" className="h-full">
+        <head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+          />
+        </head>
+        <body
+          className={`h-full antialiased`}
+          style={{ fontFamily: "Roboto, sans-serif" }}
+        >
+          <Header />
+          <div className="flex-1">{children}</div>
+          <Footer />
+          <DrawerComponent />
+        </body>
+      </html>
+    </StoreProvider>
   );
 }

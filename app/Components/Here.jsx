@@ -11,7 +11,7 @@ const FilterComponent = () => {
           </div>
         </div>
 
-        <div className="w-[100%]  bg-[#282828] text-[13px] flex flex-col">
+        <div className="w-[100%] pb-[50px]  bg-[#282828] text-[13px] flex flex-col">
           <div className="w-[75%] text-[#FFFFFF] mx-auto py-[28px] flex justify-between">
             <div className="flex gap-10 items-center">
               <button className="flex gap-2 items-center">
@@ -59,7 +59,7 @@ const FilterComponent = () => {
               <div className="py-[20px] pr-[40px] pl-[20px] border-b border-b-gray-200">Ширина</div>
 
               <div className="flex flex-col ">
-                <span className="py-[]"></span>
+                <span className="py-[40px]"></span>
               </div>
             </div>
           </div>
