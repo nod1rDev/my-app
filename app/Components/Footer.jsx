@@ -10,6 +10,7 @@ function Footer() {
           <div className="flex flex-col space-y-4">
             <span className="font-bold text-[20px] hover:text-[#ff5200] duration-300">
               <Link href="/wheels">Шины</Link>
+              
             </span>
             <span className="font-bold text-[20px] hover:text-[#ff5200] duration-300">
               <Link href="/wheels">Диски</Link>
