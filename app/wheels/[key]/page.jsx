@@ -17,7 +17,7 @@ function Page() {
   const items = useSelector((s) => s.cart.items);
 
   useEffect(() => {
-    const singleData = items.find((e) => e.id == Number(id)); // id ni to'g'ri qiyoslash uchun Number bilan o'zgartiramiz
+    const singleData = items.find((e) => e.id == Number(key)); // id ni to'g'ri qiyoslash uchun Number bilan o'zgartiramiz
     setData(singleData);
   }, []);
 
