@@ -1,23 +1,23 @@
 "use client";
 
-import { SetCart, SetCartt, changeModal } from "../../Redux/CartSlice";
+import { SetCartt, changeModal } from "../../Redux/CartSlice";
 import { useParams, useRouter } from "next/navigation";
-
 import React, { useEffect, useState, useRef } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 
 function Page() {
-  const [data, setData] = useState();
-  const { id } = useParams();
+  const [data, setData] = useState([]);
+  const { key } = useParams();
   const router = useRouter();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const imgRef = useRef(null);
   const [touch, setTouch] = useState(false);
+
   const items = useSelector((s) => s.cart.items);
+
   useEffect(() => {
-    const singleData = items.find((e) => e.id == id);
+    const singleData = items.find((e) => e.id == Number(id)); // id ni to'g'ri qiyoslash uchun Number bilan o'zgartiramiz
     setData(singleData);
   }, []);
 
@@ -28,7 +28,9 @@ function Page() {
       y: e.pageY - top,
     });
   };
+
   const dispatch = useDispatch();
+
   return (
     <div className="max-w-[95%] lg:max-w-[70%] mx-auto pb-[40px] lg:pb-[80px]">
       <div className="flex justify-end mb-[35px] pt-[10px] lg:mb-[75px]">
@@ -107,10 +109,10 @@ function Page() {
           </div>
 
           <button
-            disabled={data && data.inCart || touch}
+            disabled={(data && data.inCart) || touch}
             onClick={() => {
               dispatch(SetCartt(data && data.id));
-              setTouch(true)
+              setTouch(true);
               dispatch(changeModal(true));
             }}
             className="py-[15px] disabled:bg-[#666666] mb-[15px] max-w-[188px] hover:bg-[#ff854d] transition-all duration-300 px-[30px] text-[13px] text-white bg-[#ff5200] rounded-sm"
@@ -118,7 +120,7 @@ function Page() {
             Добавить в корзину
           </button>
 
-          <div className="flex gap-2 text-[13px] cursor-pointer    decoration-dotted text-[#1A1A1A]">
+          <div className="flex gap-2 text-[13px] cursor-pointer decoration-dotted text-[#1A1A1A]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

@@ -6,57 +6,10 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { changeModal } from "../Redux/CartSlice";
 
-export const items = [
-  {
-    img: "https://sibirkoleso.ru/local/templates/sk/src/images/no_photo.gif",
-    title: "Mefro ",
-    type: "ВАЗ-2103 Черный 60.1",
-    size: " 5.0x13 / 4x98 / 29",
-    id: 1,
-    inCart: false,
-    price: 170,
-  },
-  {
-    img: "https://sibirkoleso.ru/local/templates/sk/src/images/no_photo.gif",
-    title: "ТЗСК",
-    type: "Снежная королева 58.6",
-    size: " 5.5x14 / 4x98 / 35",
-    id: 2,
-    inCart: false,
-    price: 17230,
-  },
-  {
-    img: "https://sibirkoleso.ru/local/templates/sk/src/images/no_photo.gif",
-    title: "Mefro ",
-    type: "ВАЗ-2103 Черный 60.1",
-    size: " 5.0x13 / 4x98 / 29",
-    id: 3,
-    inCart: false,
-    price: 2093,
-  },
-  {
-    img: "https://sibirkoleso.ru/local/templates/sk/src/images/no_photo.gif",
-    title: "Arfon ",
-    type: "ВАЗ-2103 Черный 60.1",
-    size: " 5.0x13 / 4x98 / 29",
-    id: 4,
-    inCart: false,
-    price: 190,
-  },
-  {
-    img: "https://sibirkoleso.ru/local/templates/sk/src/images/no_photo.gif",
-    title: "Grof ",
-    type: "ВАЗ-2103 Черный 60.1",
-    size: " 5.0x13 / 4x98 / 29",
-    id: 5,
-    inCart: false,
-    price: 1230,
-  },
-];
-
 function page() {
   const [active, setActive] = useState(true);
   const count = useSelector((s) => s.cart.slected);
+  const items = useSelector((s) => s.cart.items);
   const handleActive = () => {
     setActive(!active);
   };
